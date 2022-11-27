@@ -1,0 +1,235 @@
+  :root{
+     --Soft-orange: hsl(35, 77%, 62%);
+    --Soft-red: hsl(5, 85%, 63%);
+
+    --Off-white: hsl(36, 100%, 99%);
+    --Grayish-blue: hsl(233, 8%, 79%);
+    --Dark-grayish-blue: hsl(236, 13%, 42%);
+    --Very-dark-blue: hsl(240, 100%, 5%);
+ }
+ import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");
+
+*,
+*::after,
+    *::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 1440px;
+  height: 100vh;
+  margin: 0 auto;
+  font-family: "Inter", sans-serif;
+  color: var(--Dark-grayish-blue);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+p{
+     font-size: 0.9375rem;
+}
+.wrapper {
+  margin:  2rem;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.logo, 
+.hamburger{
+    width: 2.5rem;
+    height: 1.5rem;
+}
+ .header__menu {
+  display: flex;
+  gap: 3rem;
+  margin-left: auto;
+}
+.header__menu a:hover {
+  color: var(--Soft-red);
+}
+.hamburger{
+    z-index: 10;
+    display: none;
+  background-color: transparent;
+  border: none;
+  background: url('./assets/images/icon-menu.svg') no-repeat center;
+  background-size: 100% 100%;
+  transition: all 0.3s ease-in-out;
+}
+.active{
+     background: url('./assets/images/icon-menu-close.svg') no-repeat center ;
+     background-size: 70% 100%;
+}
+
+main {
+  margin-top: 3rem;
+  height: 35rem;
+  display: flex;
+  justify-content: space-between;
+  gap:2rem;
+}
+.left-box{
+    max-width: 37rem;
+}
+ .left-box__img {
+  width: 100%;
+  height: 20rem;
+  background: url("./assets/images/image-web-3-desktop.jpg") no-repeat center;
+ background-size: 100% 100%;
+}
+ .left-box .content {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  gap: 1.7rem;
+}
+.left-box .content h1 {
+  color: var(--Very-dark-blue);
+  font-size: 3rem;
+  font-weight: 800;
+}
+.left-box .content .btn {
+  white-space: nowrap;
+  margin-top: 2rem;
+  background:var(--Soft-red);
+  color: var(--Off-white);
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 1.2rem 2rem;
+  letter-spacing: 0.3rem;
+  border: none;
+  cursor: pointer;
+}
+ .left-box .content .btn:hover {
+  background-color: var(--Very-dark-blue);
+}
+.right-box {
+  width: 80%;
+  height:auto;
+  background-color: var(--Very-dark-blue);
+  padding: 1rem 2rem;
+}
+.right-box h2 {
+  font-size: 2rem;
+  color: var(--Soft-orange);
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+ .right-box div {
+  margin-top: 2rem;
+  text-align: justify;
+}
+.right-box div:not(:last-child){
+  border-bottom: 1px solid var(--Grayish-blue);
+  padding-bottom: 1rem;
+} 
+ .right-box div h3 {
+  font-weight: 800;
+  color: var(--Off-white);
+  cursor: pointer;
+}
+ .right-box div h3:hover {
+  color: var(--Soft-orange);
+}
+.right-box div p {
+  margin-top: 1.4rem;
+  letter-spacing: 0.05rem;
+  font-weight: 700;
+}
+ .article {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.825rem;
+}
+
+ .article .info {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 0.5rem;
+}
+.article .info img {
+  max-width: 5rem;
+  width: 100%;
+  height: 6.5rem;
+}
+ .article .info span {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color:var(--Grayish-blue);
+}
+ .article .info h4 {
+  cursor: pointer;
+  margin: 1rem 0;
+  color: var(--Very-dark-blue);
+}
+ .article .info h4:hover {
+  color: var(--Soft-red);
+}
+.article .info p {
+  font-size: 0.625rem;
+}
+
+@media (min-width: 265px) and (max-width: 500px){
+     .wrapper {
+    margin: 2rem 0.5rem;
+    height: 100%;
+  }
+  .header{
+      padding-top: 0.5rem;
+  }
+  .header__menu {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: -130%;
+    right: 0;
+    background-color: var(--Off-white);
+    color: var(--Very-dark-blue);
+    padding: 6rem 2rem;
+    font-size: 1.125rem;
+  }
+  .menu-active{
+    top: 0;
+}
+  .hamburger {
+    display: block;
+  }
+  p{
+      line-height: 1.5;
+  }
+  main{
+      margin-top: 1.5rem;
+      height: auto;
+  }
+  main,.left-box {
+    flex-direction: column;
+  }
+  .left-box__img{
+       background: url("./assets/images/image-web-3-mobile.jpg") no-repeat center center;
+       background-size:100% 100%;
+  }
+  .left-box .content {
+      grid-template-columns: repeat(1,1fr);
+  }
+  .article {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+  }
+  .btn {
+      pointer-events: none;
+  }
+}
